@@ -30,7 +30,7 @@ async def chat(input: ChatInput):
     
     try:
         response = openai.ChatCompletion.create(
-            model="gpt-4",
+            model="gpt-3.5-turbo",
             messages=[
                 {"role": "system", "content": "You are a kind and intelligent tutor."},
                 {"role": "user", "content": prompt}
