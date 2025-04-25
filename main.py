@@ -48,6 +48,10 @@ async def chat(input: ChatInput):
             ]
         )
         answer = response.choices[0].message.content.strip()
-        return {"answer": answer}
+if not answer:
+    answer = "Hmm, I’m not sure how to answer that yet — can you try asking another way?"
+print("Final answer:", answer)
+return {"answer": answer}
+
     except Exception as e:
         return {"error": str(e)}
