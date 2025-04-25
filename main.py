@@ -1,4 +1,4 @@
-
+from utils.curriculum_loader import load_curriculum
 from fastapi import FastAPI, Request
 from pydantic import BaseModel
 import openai
@@ -26,8 +26,19 @@ class ChatInput(BaseModel):
 
 @app.post("/chat")
 async def chat(input: ChatInput):
-    prompt = f"You are a helpful tutor for Grade {input.grade} in {input.subject}. Answer this question simply: {input.question}"
-    
+    # Default tone
+    prompt_intro = f"You are a helpful tutor for Grade {input.grade} in {input.subject}."
+
+    # Load custom tone if Kindergarten + English
+    if str(input.grade).lower() in ["k", "kindergarten", "0"] or input.grade == 0:
+        if input.subject.lower() == "english":
+            curriculum = load_curriculum("kindergarten")
+            tone = curriculum.get("chatbot_guidance", {}).get("tone", "")
+            prompt_intro = f"{tone} You are a Kindergarten tutor for English."
+
+    # Full prompt
+    prompt = f"{prompt_intro} Answer this question simply: {input.question}"
+
     try:
         response = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
