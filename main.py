@@ -40,18 +40,17 @@ async def chat(input: ChatInput):
     prompt = f"{prompt_intro} Answer this question simply: {input.question}"
 
     try:
-        response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",
-            messages=[
-                {"role": "system", "content": "You are a kind and intelligent tutor."},
-                {"role": "user", "content": prompt}
-            ]
-        )
-        answer = response.choices[0].message.content.strip()
-if not answer:
-    answer = "Hmm, I’m not sure how to answer that yet — can you try asking another way?"
-print("Final answer:", answer)
-return {"answer": answer}
-
-    except Exception as e:
-        return {"error": str(e)}
+    response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {"role": "system", "content": "You are a kind and intelligent tutor."},
+            {"role": "user", "content": prompt}
+        ]
+    )
+    answer = response.choices[0].message.content.strip()
+    if not answer:
+        answer = "Hmm, I’m not sure how to answer that yet — can you try asking another way?"
+    print("Final answer:", answer)
+    return {"answer": answer}
+except Exception as e:
+    return {"error": str(e)}
