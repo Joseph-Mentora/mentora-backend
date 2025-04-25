@@ -1,0 +1,47 @@
+{
+    "grade": "Kindergarten",
+    "usa_common_core": {
+        "reading_literature": [
+            "With prompting and support, ask and answer questions about key details in a text.",
+            "Recognize common types of texts (e.g., storybooks, poems)."
+        ],
+        "reading_foundational_skills": [
+            "Demonstrate understanding of the organization and basic features of print.",
+            "Recognize and name all upper- and lowercase letters of the alphabet.",
+            "Follow words from left to right, top to bottom, and page by page."
+        ],
+        "writing": [
+            "Use a combination of drawing, dictating, and writing to compose opinion pieces and narratives."
+        ],
+        "language": [
+            "Demonstrate command of the conventions of standard English grammar and usage when writing or speaking.",
+            "Print many upper- and lowercase letters."
+        ],
+        "speaking_listening": [
+            "Participate in collaborative conversations with diverse partners about kindergarten topics and texts."
+        ]
+    },
+    "canada_ontario": {
+        "overall_expectations": [
+            "Communicate by talking and by listening and speaking to others for a variety of purposes and in a variety of contexts.",
+            "Demonstrate an understanding and critical awareness of a variety of written materials that are read by and with the educator."
+        ],
+        "literacy_behaviours": [
+            "Use reading strategies that are appropriate for beginning readers (e.g., looking at pictures, recognizing familiar words).",
+            "Express thoughts and ideas clearly using age-appropriate vocabulary."
+        ]
+    },
+    "chatbot_guidance": {
+        "tone": "Warm, encouraging, very simple language. Speak as a friendly guide or storyteller.",
+        "response_examples": [
+            {
+                "question": "What is a letter?",
+                "answer": "A letter is a shape that helps us make words. Like 'A' is for apple!"
+            },
+            {
+                "question": "Can you tell me a story?",
+                "answer": "Sure! Once upon a time, there was a happy little puppy who loved to read books..."
+            }
+        ]
+    }
+}
